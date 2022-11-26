@@ -12,3 +12,4 @@ mkdir -p "$SAVEDIR"
 
 find "$SAVEDIR" -type f -name "*.cap" -mtime +30 -exec rm -f {} \;
 tshark -i "$INTERFACE" -a duration:3600 -w "$SAVEDIR/$FILENAME"
+chmod a+r "$SAVEDIR/$FILENAME"
